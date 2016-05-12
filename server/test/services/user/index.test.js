@@ -1,10 +1,10 @@
-'use strict';
+"use strict"
 
-const assert = require('assert');
-const app = require('../../../src/app');
+import test from "ava";
 
-describe('user service', function() {
-  it('registered the users service', () => {
-    assert.ok(app.service('users'));
-  });
+const app = require("../../../src/app");
+const assert = require("assert");
+
+test("The users service has registered", t => {
+	t.truthy(app.service("users"));
 });

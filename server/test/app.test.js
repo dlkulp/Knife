@@ -1,51 +1,63 @@
-'use strict';
+'use strict'
 
-const assert = require('assert');
-const request = require('request');
-const app = require('../src/app');
+import test from "ava";
 
-describe('Feathers application tests', function() {
-  before(function(done) {
-    this.server = app.listen(3030);
-    this.server.once('listening', () => done());
-  });
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const app = require("../src/app");
 
-  after(function(done) {
-    this.server.close(done);
-  });
+let server;
 
-  it('starts and shows the index page', function(done) {
-    request('http://localhost:3030', function(err, res, body) {
-      assert.ok(body.indexOf('<html>') !== -1);
-      done(err);
-    });
-  });
+test.before(t => {
+	server = app.listen(3030);
+	server.once("listening", () => {});
+	console.log("Server booted");
+});
 
-  describe('404', function() {
-    it('shows a 404 HTML page', function(done) {
-      request({
-        url: 'http://localhost:3030/path/to/nowhere',
-        headers: {
-          'Accept': 'text/html'
-        }
-      }, function(err, res, body) {
-        assert.equal(res.statusCode, 404);
-        assert.ok(body.indexOf('<html>') !== -1);
-        done(err);
-      });
-    });
+test("Starts and shows index page", t => {
+	t.plan(1);
 
-    it('shows a 404 JSON error without stack trace', function(done) {
-      request({
-        url: 'http://localhost:3030/path/to/nowhere',
-        json: true
-      }, function(err, res, body) {
-        assert.equal(res.statusCode, 404);
-        assert.equal(body.code, 404);
-        assert.equal(body.message, 'Page not found');
-        assert.equal(body.name, 'NotFound');
-        done(err);
-      });
-    });
-  });
+	return new Promise((resolve, reject) => {
+		var req = new XMLHttpRequest()
+
+		req.open("GET", "http://localhost:3030");
+		req.onload = () => {
+			if (req.status === 200)
+				resolve(req);
+			else
+				reject(Error(`Could not reach index: ${req.statusText}`))
+		};
+		req.onerror = () => {
+			reject(Error("Well, shit"))
+		};
+		req.send();
+
+	}).then(result => t.is(result.status, 200), err => {
+		console.log(err);
+		t.fail();
+	});
+
+});
+
+test("Shows a 404 page", t => {
+	return new Promise((resolve, reject) => {
+		var req = new XMLHttpRequest()
+
+		req.open("GET", "http://localhost:3030/path/to/nowhere");
+		req.onload = () => {
+			if (req.status === 404)
+				resolve(req);
+			else
+				reject("Did not return a 404 page.")
+		};
+		req.onerror = () => {
+			reject(Error("Well, shit"))
+		};
+		req.send();
+
+	});
+})
+
+test.after(t => {
+	server.close()
+	console.log("Server closed");
 });
