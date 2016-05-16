@@ -15,7 +15,7 @@ export default {
 			msg: 'Hello World!'
 		}
 	}
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
