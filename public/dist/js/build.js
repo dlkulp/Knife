@@ -10218,7 +10218,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\Documents\\knife\\server\\public\\src\\App.vue"
+	  var id = "F:\\Documents\\knife\\public\\src\\App.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10278,7 +10278,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\Documents\\knife\\server\\public\\src\\components\\Hello.vue"
+	  var id = "F:\\Documents\\knife\\public\\src\\components\\Hello.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {

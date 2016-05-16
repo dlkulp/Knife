@@ -20,8 +20,7 @@
     "start": "node src/",
     "lint": "xo",
     "fly": "fly",
-    "build": "fly build",
-    "temp": "webpack"
+    "build": "fly build"
   },
   "dependencies": {
     "body-parser": "^1.15.0",

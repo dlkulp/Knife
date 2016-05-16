@@ -30,3 +30,6 @@ node_modules
 lib/
 data/
 .nyc_output
+
+public/dist/js/build.js
+public/dist/js/build.js.map
