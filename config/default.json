@@ -1,26 +1,12 @@
-{  
-	"host": "localhost",
-	"port": 3030,
-	"public": "../public/",
-	"auth": {
-		"idField": "id",
-		"token": {
-			"secret": "+WSWdsTVoF5wit2kJ13DPolT2/tXbkMjXvNou6DYHc0xN6x5vCXEbfITAZsuMc54Leu32+IN3qr/Hw/ze8ZlXA=="
-		},
-		"local": {},
-		"facebook": {
-			"clientID": "your facebook client id",
-			"clientSecret": "your facebook client secret",
-			"permissions": {
-				"scope": ["public_profile","email"]
-			}
-		},
-		"google": {
-			"clientID": "your google client id",
-			"clientSecret": "your google client secret",
-			"permissions": {
-				"scope": ["profile"]
-			}
-		}
-	}
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "auth": {
+    "idField": "id",
+    "token": {
+      "secret": "4bluglrPSxA7FoCdTfdrO7I5vtK28JaYq7piVzzEAgZuTcLE35mgL4RTV+SzMJ2+f9CoNtrXP6iLguPUKBxV1g=="
+    },
+    "local": {}
+  }
 }
