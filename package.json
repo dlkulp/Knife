@@ -11,8 +11,10 @@
     "url": "https://gitlab.com/monochromicon/knife.git"
   },
   "author": "Graham Barber <grahammbarber@gmail.com> (http://monolith.xyz)",
-  "contributors": ["Damian Kulp <damiankulp@gmail.com> (http://damiankulp.com)",
-                   "Fauzi Kliman <fauzikliman@gmail.com (http://github.com/merfoo)"],
+  "contributors": [
+    "Damian Kulp <damiankulp@gmail.com> (http://damiankulp.com)",
+    "Fauzi Kliman <fauzikliman@gmail.com (http://github.com/merfoo)"
+  ],
   "engines": {
     "node": ">= 0.12.0"
   },
@@ -28,6 +30,7 @@
     "body-parser": "^1.15.0",
     "compression": "^1.6.1",
     "cors": "^2.7.1",
+    "css-loader": "^0.23.1",
     "feathers": "^2.0.1",
     "feathers-authentication": "^0.7.6",
     "feathers-configuration": "^0.2.3",
@@ -43,6 +46,7 @@
     "rethinkdbdash": "^2.3.5",
     "serve-favicon": "^2.3.0",
     "vue": "^1.0.0",
+    "vue-router": "^0.7.13",
     "winston": "^2.2.0"
   },
   "devDependencies": {
