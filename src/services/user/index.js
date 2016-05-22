@@ -1,6 +1,12 @@
 'use strict';
 
+const dbConfig = require("../dbConf");
 const hooks = require('./hooks');
+const rethink = require("rethinkdbdash");
+
+const r = rethink({
+	db: dbConfig.name
+})
 
 class Service {
 	constructor(options) {
@@ -12,9 +18,19 @@ class Service {
 	}
 
 	get(id, params) {
-		return Promise.resolve({
-			id, text: `A new message with ID: ${id}!`
-		});
+		return Promise.resolve(r.db(dbConfig.name).table(dbConfig.tables.users).get(id).run(
+			function(err, data){
+				if(err){
+					console.log("Error!");
+					console.log(err);
+					return {};
+				}
+				
+				else
+				{
+					return data;
+				}
+			}));		
 	}
 
 	create(data, params) {

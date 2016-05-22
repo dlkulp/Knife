@@ -1,4 +1,5 @@
 "use strict";
+const dbConfig = require("./dbConf");
 const authentication = require("./authentication");
 const user = require("./user");
 const rethink = require("rethinkdbdash");
@@ -13,20 +14,22 @@ module.exports = function () {
 	app.use("/user", user);
 	
 	// RethinkDB setup
-	var dbName = "feathers";
-	var tableName = "users";
-	
 	const r = rethink({
-		db: dbName
+		db: dbConfig.name
 	});
 	
 	// Create db if it doesn't exist
-	r.dbList().contains(dbName)
-		.do(dbExists => r.branch(dbExists, {create: 0}, r.dbCreate(dbName))).run()
+	r.dbList().contains(dbConfig.name)
+		.do(dbExists => r.branch(dbExists, {create: 0}, r.dbCreate(dbConfig.name))).run()
 		
-		// Create table if doesn't exist
+		// Create tables if doesn't exist
 		.then(() => {
-			return r.db(dbName).tableList().contains(tableName)
-			.do(tableExists => r.branch(tableExists, {created: 0}, r.tableCreate(tableName))).run()
+			return r.db(dbConfig.name).tableList().contains(dbConfig.tables.users)
+			.do(tableExists => r.branch(tableExists, {created: 0}, r.tableCreate(dbConfig.tables.users))).run()
+		})
+		
+		.then(() => {
+			return r.db(dbConfig.name).tableList().contains(dbConfig.tables.teams)
+			.do(tableExists => r.branch(tableExists, {created: 0}, r.tableCreate(dbConfig.tables.teams))).run()
 		});
 };
