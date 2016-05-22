@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a href="#{{tab1}}">{{tab1}}</a></li>
+					<li class="tab col s3"><a class="active" href="#{{tab1}}">{{tab1}}</a></li>
 					<li class="tab col s3"><a href="#{{tab2}}">{{tab2}}</a></li>
 					<li class="tab col s3 disabled"><a href="#"></a></li>
 					<li class="tab col s3 disabled"><a href="#"></a></li>
