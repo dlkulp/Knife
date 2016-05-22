@@ -1,7 +1,7 @@
 <template>
 	<!-- Top Image -->
 	<br><br>
-	<div class="row parallax-container">
+	<div class="row parallax-container" style="height: 350px">
 		<div class="parallax"><img v-bind:src="team.link"></img></div>
 	</div>
 	<div class="container">

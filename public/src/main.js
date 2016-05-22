@@ -6,6 +6,7 @@ import Home from "./components/Home.vue";
 import Browse from "./components/Browse.vue";
 import UserProfile from "./components/UserProfile.vue";
 import TeamProfile from "./components/TeamProfile.vue";
+import GameProfile from "./components/GameProfile.vue";
 // import App from "./App.vue";
 
 const App = Vue.extend({});
@@ -32,6 +33,10 @@ router.map({
 	"/team-profile": {
 		name: "team-profile",
 		component: TeamProfile
+	},
+	"/game-profile": {
+		name: "game-profile",
+		component: GameProfile
 	}
 });
 
