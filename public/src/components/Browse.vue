@@ -19,7 +19,7 @@
 			<div class="container">
 				<ul>
 					<li v-for="team in teams" class="col s6 m4 l3">
-						<div class="card hoverable medium " style="padding-left: 10px;">
+						<div class="card hoverable medium">
 							<div class="card-image">
 								<img class="activator" v-bind:src="team.link">
 							</div>
@@ -41,22 +41,26 @@
 		
 		<!-- Tab 2 -->
 		<div id="{{tab2}}" class="col s12">
-			<div class="container" style="padding: 0 10px;">
-				<div v-for="game in games" class="card hoverable medium col s6 m4 l3" style="padding: inherit">
-					<div class="card-image">
-						<img class="activator" v-bind:src="game.link">
-					</div>
-					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">{{game.title}}<i class="material-icons right">more_vert</i></span>
-					</div>
-					<div class="card-action">
-						<a v-bind:href="game.link">game page</a>
-					</div>
-					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">{{game.title}}<i class="material-icons right">close</i></span>
-						<p>{{game.desc}}</p>
-					</div>
-				</div>
+			<div class="container">
+				<ul>
+					<li v-for="game in games" class="col s6 m4 l3">
+						<div class="card hoverable medium">
+							<div class="card-image">
+								<img class="activator" v-bind:src="game.link">
+							</div>
+							<div class="card-content">
+								<span class="card-title activator grey-text text-darken-4">{{game.title}}<i class="material-icons right">more_vert</i></span>
+							</div>
+							<div class="card-action">
+								<a v-bind:href="game.link">game page</a>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">{{game.title}}<i class="material-icons right">close</i></span>
+								<p>{{game.desc}}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 		
