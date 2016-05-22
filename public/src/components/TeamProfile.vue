@@ -32,7 +32,7 @@
 									<img class="activator" v-bind:src="user.image">
 								</div>
 								<div class="card-content">
-									<span class="card-title activator grey-text text-darken-4">{{user.name}}<i class="material-icons right">more_vert</i></span>
+									<div class="card-title activator grey-text text-darken-4">{{user.name}}</div><i class="material-icons right">more_vert</i>
 								</div>
 								<div class="card-action">
 									<a v-link="{path: user.page}">user page</a>
@@ -97,11 +97,8 @@
 					],
 					games: [
 						{title:"Tom Clancy's The Division", desc:"Lorem Ipsum", link: "../../assets/game-cover.jpg", page:"/game-profile"},
-						{title: "bye", desc: "gurl", link: "../../assets/logo.png", page:"/game-profile" }, 
-						{title: "adios", desc: "y'all", link: "../../assets/logo.png", page:"/game-profile" }, 
-						{title: "goodbye", desc: "pal", link: "../../assets/logo.png", page:"/game-profile" }, 
-						{title: "later", desc: "person", link: "../../assets/logo.png", page:"/game-profile" }, 
-						{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png", page:"/game-profile" }
+						{title: "Far Cry Primal", desc: "pal", link: "../../assets/far-cry-primal.jpg", page:"/game-profile" }, 
+						{title: "Rainbow Six Siege", desc: "person", link: "../../assets/rainbow-six.jpg", page:"/game-profile" }
 					]
 				}
 			}
