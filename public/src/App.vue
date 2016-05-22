@@ -1,15 +1,15 @@
 <template>
-	<div id="app">
-		<hello></hello>
-	</div>
+	<main>
+		<home></home>
+	</main>
 </template>
 
 <script>
-import Hello from './components/Hello.vue'
+import Home from "./components/Home.vue"
 
 export default {
 	components: {
-		Hello
+		Home
 	}
 }
 </script>
