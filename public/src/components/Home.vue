@@ -1,6 +1,7 @@
 <template>
 	<div class="hello">
-		<h1>{{ msg }}</h1>
+		<h1>{{ title }}</h1>
+		<p>{{ description }}</p>
 	</div>
 </template>
 
@@ -11,7 +12,8 @@ export default {
     		// Note: modifying `msg` below will not cause changes to occur with
     		// hot-reload. As reloaded components preserve their initial state,
     		// modifying these values will have no effect.
-			msg: 'Hello World!'
+			title: "Knife Team Management System",
+			description: "A system for managing teams"
 		}
 	}
 }
