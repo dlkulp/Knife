@@ -6,7 +6,7 @@
 		<!-- Menu -->
 		<div class="container">
 			<div class="col s12">
-				<ul class="tabs">
+				<ul class="tabs" style="overflow: hidden">
 					<li class="tab col s3"><a class="active" href="#{{tab1}}">{{tab1}}</a></li>
 					<li class="tab col s3"><a href="#{{tab2}}">{{tab2}}</a></li>
 					<li class="tab col s3 disabled"><a href="#"></a></li>
@@ -76,16 +76,18 @@
 				tab2: "Games",
 				games: [
 					{title:"Tom Clancy's The Division", desc:"Lorem Ipsum", link: "../../assets/game-cover.jpg", page:"/game-profile"},
-					{title: "hi", desc: "you", link: "../../assets/logo.png", page:"/game-profile" }, 
-					{title: "hello", desc: "him", link: "../../assets/logo.png", page:"/game-profile" }, 
-					{title: "howdy", desc: "her", link: "../../assets/logo.png", page:"/game-profile" }
+						{title: "Ark Survival", desc: "gurl", link: "../../assets/ark.jpg", page:"/game-profile" }, 
+						{title: "Battlefield Hardline", desc: "y'all", link: "../../assets/battlefield.jpg", page:"/game-profile" }, 
+						{title: "Far Cry Primal", desc: "pal", link: "../../assets/far-cry-primal.jpg", page:"/game-profile" }, 
+						{title: "Rainbow Six Siege", desc: "person", link: "../../assets/rainbow-six.jpg", page:"/game-profile" }, 
+						{title: "Neko Atsume", desc: "buddy", link: "../../assets/nekoatsume.jpg", page:"/game-profile" },
+						{title: "Quantum Break", desc: "bud", link: "../../assets/quantum-break.jpg", page:"/game-profile" }
 				],
 				teams: [
-					{title: "Ubisoft Montreal", desc: "Canadian Games", link: "../../assets/team.jpg", page:"/team-profile" }, 
-					{title: "adios", desc: "y'all", link: "../../assets/logo.png", page:"/team-profile" }, 
-					{title: "goodbye", desc: "pal", link: "../../assets/logo.png", page:"/team-profile" }, 
-					{title: "later", desc: "person", link: "../../assets/logo.png", page:"/team-profile" }, 
-					{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png", page:"/team-profile" }
+					{title: "Ubisoft Montréal", desc: "Canadian Games", link: "../../assets/team.jpg", page:"/team-profile" }, 
+					{title: "Mojang Studios", desc: "you", link: "../../assets/mojang-office.jpg", page:"/team-profile" }, 
+					{title: "Blizzard Studios", desc: "him", link: "../../assets/blizzard.jpg", page:"/team-profile" }, 
+					{title: "Gabe Newell", desc: "her", link: "../../assets/gabe-newell.jpg", page:"/team-profile" }
 				]
 			}
 		}

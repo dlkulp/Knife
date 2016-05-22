@@ -10,7 +10,7 @@ export default {
 	data () {
 		return {
 			title: "Knife Team Management System",
-			description: "A system for managing teams"
+			description: "A application for managing entries to art competitions, game jams, or coding events. Created for CodeDay:2016 by Graham, Fauzi, and Damian.",
 		}
 	}
 }
