@@ -9,6 +9,9 @@ new Vue({
 	components: { App }
 });
 
+let user;
+let token;
+
 // Authentication
 let host = "//localhost:955";
 
@@ -26,6 +29,8 @@ $("#loginSubmin").click(() => {
 		password: $("#lpass").val()
 	}).then(() => {
 		console.log("Authenticated!", app.get("token"));
+		user = app.user();
+		token = app.get("token");
 	}).catch((error) => {
 		console.error("Error authenticating!", error);
 	});
