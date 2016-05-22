@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const dbConf = require("../dbConf");
-const hooks = require('./hooks');
 const rethink = require("rethinkdbdash");
+const dbConf = require("../dbConf");
+const hooks = require("./hooks");
 
 // RethinkDB instance
 const r = rethink({
 	db: dbConf.name
-})
+});
 
 
 // Table variable
@@ -29,54 +29,56 @@ class Service {
 	get(id, params) {
 		console.log("user get");
 		console.log(id);
-		
+
 		// User data json holder
 		var userData = {
-			"username": " ",
-			"desc": " ",
-			"image": " ",
-			"teams": [],
-			"games": []
+			username: " ",
+			desc: " ",
+			image: " ",
+			teams: [],
+			games: []
 		};
-		
+
 		// Main heart of function
-		var dbCall = function(){
+		var dbCall = function () {
 			var teams = teamsDB.value();
-			for(var i = 0; i < teams.length; i++){
+			for (var i = 0; i < teams.length; i++) {
 				var team = teams[i];
-				
+
 				// If team contains user add data to from team to user
-				if(team.users.indexOf(id) > -1){
-					// Add team to user 
+				if (team.users.indexOf(id) > -1) {
+					// Add team to user
 					userData.teams.push(team.name);
-					
+
 					// Add games from team to user
 					userData.games.push(team.games);
 				}
 			}
-			
-			// Get user data 
-			return new Promise((resolve, reject) => {userDB.get(id).run(function(err, data){
-				if(err){
-					console.log("Error!");
-					console.log(err);
-					return {};
-				}
-					
-				else{
-					userData.username = data.username;
-					userData.desc = data.desc;
-					userData.image = data.image;
-				}
-				
-				console.log(userData);
-				resolve(userData);
-			})});
-		}
-		
-		return Promise.resolve(dbCall());		
+
+			// Get user data
+			return new Promise((resolve, reject) => {
+				userDB.get(id).run((err, data) => {
+					if (err) {
+						console.log("Error!");
+						console.log(err);
+						return {};
+					}
+
+					else {
+						userData.username = data.username;
+						userData.desc = data.desc;
+						userData.image = data.image;
+					}
+
+					console.log(userData);
+					resolve(userData);
+				});
+			});
+		};
+
+		return Promise.resolve(dbCall());
 	}
-	
+
 	create(data, params) {
 		console.log("user create");
 		var userData = data;
@@ -95,11 +97,11 @@ class Service {
 	*/
 	update(id, data, params) {
 		console.log("user update");
-		
+
 		// Insert data into userDB
 		var userData = data;
 		userDB.insert(userData).run();
-		
+
 		console.log(userData);
 		return Promise.resolve(userData);
 	}
@@ -118,7 +120,7 @@ class Service {
 	patch(id, data, params) {
 		console.log("user patch");
 		// If my session id/id matches recieved, replace data
-		
+
 		return Promise.resolve(data);
 	}
 
@@ -128,14 +130,14 @@ class Service {
 	}
 }
 
-module.exports = function(){
+module.exports = function () {
 	const app = this;
 
 	// Initialize our service with any options it requires
-	app.use('/users', new Service());
+	app.use("/users", new Service());
 
 	// Get our initialize service to that we can bind hooks
-	const userService = app.service('/users');
+	const userService = app.service("/users");
 
 	// Set up our before hooks
 	userService.before(hooks.before);

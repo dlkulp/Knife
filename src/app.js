@@ -10,7 +10,6 @@ const configuration = require("feathers-configuration");
 const hooks = require("feathers-hooks");
 const rest = require("feathers-rest");
 const bodyParser = require("body-parser");
-const socketio = require("feathers-socketio");
 const middleware = require("./middleware");
 const services = require("./services");
 
