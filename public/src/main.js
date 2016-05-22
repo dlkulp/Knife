@@ -76,8 +76,13 @@ $(document).ready(() => {
 	$(".modal-trigger").leanModal();
 	$(".parallax").parallax();
 	$("ul.tabs").tabs();
+	$(".slider").slider({full_width: true});
 });
 
 $("#nav-mobile li a").click(() => {
+	location.reload();
+});
+
+$(".card-action a").click(() => {
 	location.reload();
 });

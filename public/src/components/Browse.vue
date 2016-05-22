@@ -19,15 +19,15 @@
 			<div class="container">
 				<ul>
 					<li v-for="team in teams" class="col s6 m4 l3">
-						<div class="card hoverable medium">
+						<div class="card hoverable small">
 							<div class="card-image">
 								<img class="activator" v-bind:src="team.link">
 							</div>
 							<div class="card-content">
-								<span class="card-title activator grey-text text-darken-4">{{team.title}}<i class="material-icons right">more_vert</i></span>
+								<span class="card-title activator grey-text text-darken-4">{{team.title}}</span><i class="material-icons right">more_vert</i>
 							</div>
 							<div class="card-action">
-								<a v-bind:href="team.link">team page</a>
+								<a v-link="{path: team.page}">team page</a>
 							</div>
 							<div class="card-reveal">
 								<span class="card-title grey-text text-darken-4">{{team.title}}<i class="material-icons right">close</i></span>
@@ -44,7 +44,7 @@
 			<div class="container">
 				<ul>
 					<li v-for="game in games" class="col s6 m4 l3">
-						<div class="card hoverable medium">
+						<div class="card hoverable small">
 							<div class="card-image">
 								<img class="activator" v-bind:src="game.link">
 							</div>
@@ -52,7 +52,7 @@
 								<span class="card-title activator grey-text text-darken-4">{{game.title}}<i class="material-icons right">more_vert</i></span>
 							</div>
 							<div class="card-action">
-								<a v-bind:href="game.link">game page</a>
+								<a v-link="{path: game.page}">game page</a>
 							</div>
 							<div class="card-reveal">
 								<span class="card-title grey-text text-darken-4">{{game.title}}<i class="material-icons right">close</i></span>
@@ -75,16 +75,17 @@
 				tab1: "Teams",
 				tab2: "Games",
 				games: [
-					{title: "hi", desc: "you", link: "../../assets/logo.png" }, 
-					{title: "hello", desc: "him", link: "../../assets/logo.png" }, 
-					{title: "howdy", desc: "her", link: "../../assets/logo.png" }
+					{title:"Tom Clancy's The Division", desc:"Lorem Ipsum", link: "../../assets/game-cover.jpg", page:"/game-profile"},
+					{title: "hi", desc: "you", link: "../../assets/logo.png", page:"/game-profile" }, 
+					{title: "hello", desc: "him", link: "../../assets/logo.png", page:"/game-profile" }, 
+					{title: "howdy", desc: "her", link: "../../assets/logo.png", page:"/game-profile" }
 				],
 				teams: [
-					{title: "bye", desc: "gurl", link: "../../assets/logo.png" }, 
-					{title: "adios", desc: "y'all", link: "../../assets/logo.png" }, 
-					{title: "goodbye", desc: "pal", link: "../../assets/logo.png" }, 
-					{title: "later", desc: "person", link: "../../assets/logo.png" }, 
-					{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png" }
+					{title: "Ubisoft Montreal", desc: "Canadian Games", link: "../../assets/team.jpg", page:"/team-profile" }, 
+					{title: "adios", desc: "y'all", link: "../../assets/logo.png", page:"/team-profile" }, 
+					{title: "goodbye", desc: "pal", link: "../../assets/logo.png", page:"/team-profile" }, 
+					{title: "later", desc: "person", link: "../../assets/logo.png", page:"/team-profile" }, 
+					{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png", page:"/team-profile" }
 				]
 			}
 		}
