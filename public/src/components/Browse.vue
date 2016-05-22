@@ -1,6 +1,65 @@
 <template>
-	<div class="hello">
-		<h1>{{ msg }}</h1>
+<br>
+	<h1 class="container">{{ title }}</h1>
+	<br>
+	<div class="row">
+		<!-- Menu -->
+		<div class="container">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#{{tab1}}">{{tab1}}</a></li>
+					<li class="tab col s3"><a href="#{{tab2}}">{{tab2}}</a></li>
+					<li class="tab col s3 disabled"><a href="#"></a></li>
+					<li class="tab col s3 disabled"><a href="#"></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- Tab 1 -->
+		<div id="{{tab1}}" class="col s12">
+			<div class="container">
+				<ul>
+					<li v-for="team in teams" class="col s6 m4 l3">
+						<div class="card hoverable medium " style="padding-left: 10px;">
+							<div class="card-image">
+								<img class="activator" v-bind:src="team.link">
+							</div>
+							<div class="card-content">
+								<span class="card-title activator grey-text text-darken-4">{{team.title}}<i class="material-icons right">more_vert</i></span>
+							</div>
+							<div class="card-action">
+								<a v-bind:href="team.link">team page</a>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">{{team.title}}<i class="material-icons right">close</i></span>
+								<p>{{team.desc}}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- Tab 2 -->
+		<div id="{{tab2}}" class="col s12">
+			<div class="container" style="padding: 0 10px;">
+				<div v-for="game in games" class="card hoverable medium col s6 m4 l3" style="padding: inherit">
+					<div class="card-image">
+						<img class="activator" v-bind:src="game.link">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">{{game.title}}<i class="material-icons right">more_vert</i></span>
+					</div>
+					<div class="card-action">
+						<a v-bind:href="game.link">game page</a>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">{{game.title}}<i class="material-icons right">close</i></span>
+						<p>{{game.desc}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 </template>
 
@@ -8,10 +67,21 @@
 	export default {
 		data () {
 			return {
-				// Note: modifying `msg` below will not cause changes to occur with
-				// hot-reload. As reloaded components preserve their initial state,
-				// modifying these values will have no effect.
-				msg: "Browsering"
+				title: "Browse",
+				tab1: "Teams",
+				tab2: "Games",
+				games: [
+					{title: "hi", desc: "you", link: "../../assets/logo.png" }, 
+					{title: "hello", desc: "him", link: "../../assets/logo.png" }, 
+					{title: "howdy", desc: "her", link: "../../assets/logo.png" }
+				],
+				teams: [
+					{title: "bye", desc: "gurl", link: "../../assets/logo.png" }, 
+					{title: "adios", desc: "y'all", link: "../../assets/logo.png" }, 
+					{title: "goodbye", desc: "pal", link: "../../assets/logo.png" }, 
+					{title: "later", desc: "person", link: "../../assets/logo.png" }, 
+					{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png" }
+				]
 			}
 		}
 	}
