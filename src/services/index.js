@@ -1,4 +1,8 @@
 "use strict";
+const unprotectedTesting = require('./unprotectedTesting');
+const protectedTesting = require('./protectedTesting');
+const unprotectedSex = require('./unprotected-sex');
+const protectedService = require('./protected-service');
 const testing = require('./testing');
 const authentication = require("./authentication");
 const user = require("./user");
@@ -11,12 +15,12 @@ module.exports = function () {
     app.configure(authentication);
     app.configure(user);
     app.configure(testing);
-    
+
     // Connect to local RethinkDB server, name it "feathers"
     const r = rethink({
         db: "feathers"
     });
-    
+
     // Create db if doesn't exist
     r.dbList().contains("feathers")
         .do(dbExists => r.branch(dbExists, {created: 0}, r.dbCreate("feathers"))).run()
@@ -46,4 +50,8 @@ module.exports = function () {
                 complete: false
             })
         });
+    app.configure(protectedService);
+    app.configure(unprotectedSex);
+    app.configure(protectedTesting);
+    app.configure(unprotectedTesting);
 };
