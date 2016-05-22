@@ -1,12 +1,19 @@
 'use strict';
 
-const dbConfig = require("../dbConf");
+const dbConf = require("../dbConf");
 const hooks = require('./hooks');
 const rethink = require("rethinkdbdash");
 
+// RethinkDB instance
 const r = rethink({
-	db: dbConfig.name
+	db: dbConf.name
 })
+
+
+// Table variable
+var userDB = r.db(dbConf.name).table(dbConf.tables.users);
+var teamsDB = r.db(dbConf.name).table(dbConf.tables.teams).run();
+var gamesDB = r.db(dbConf.name).table(dbConf.tables.games).run();
 
 class Service {
 	constructor(options) {
@@ -14,42 +21,109 @@ class Service {
 	}
 
 	find(params) {
+		console.log("user find");
 		return Promise.resolve([]);
 	}
 
+	// GET /user/id
 	get(id, params) {
-		return Promise.resolve(r.db(dbConfig.name).table(dbConfig.tables.users).get(id).run(
-			function(err, data){
+		console.log("user get");
+		console.log(id);
+		
+		// User data json holder
+		var userData = {
+			"username": " ",
+			"desc": " ",
+			"image": " ",
+			"teams": [],
+			"games": []
+		};
+		
+		// Main heart of function
+		var dbCall = function(){
+			var teams = teamsDB.value();
+			for(var i = 0; i < teams.length; i++){
+				var team = teams[i];
+				
+				// If team contains user add data to from team to user
+				if(team.users.indexOf(id) > -1){
+					// Add team to user 
+					userData.teams.push(team.name);
+					
+					// Add games from team to user
+					userData.games.push(team.games);
+				}
+			}
+			
+			// Get user data 
+			return new Promise((resolve, reject) => {userDB.get(id).run(function(err, data){
 				if(err){
 					console.log("Error!");
 					console.log(err);
 					return {};
 				}
-				
-				else
-				{
-					return data;
+					
+				else{
+					userData.username = data.username;
+					userData.desc = data.desc;
+					userData.image = data.image;
 				}
-			}));		
-	}
-
-	create(data, params) {
-		if(Array.isArray(data)) {
-			return Promise.all(data.map(current => this.create(current)));
+				
+				console.log(userData);
+				resolve(userData);
+			})});
 		}
-
-		return Promise.resolve(data);
+		
+		return Promise.resolve(dbCall());		
+	}
+	
+	create(data, params) {
+		console.log("user create");
+		var userData = data;
+		userDB.insert(id).run();
+		console.log(userData);
+		return Promise.resolve(userData);
 	}
 
+	/*
+		PUT /user/id
+		Expects:
+			id (slug)
+			username
+			password
+			email
+	*/
 	update(id, data, params) {
-		return Promise.resolve(data);
+		console.log("user update");
+		
+		// Insert data into userDB
+		var userData = data;
+		userDB.insert(userData).run();
+		
+		console.log(userData);
+		return Promise.resolve(userData);
 	}
 
+	/*
+		PATCH /user/id
+		Expects:
+			session id
+			id (slug)
+			username
+			password
+			email
+			description
+			link
+	*/
 	patch(id, data, params) {
+		console.log("user patch");
+		// If my session id/id matches recieved, replace data
+		
 		return Promise.resolve(data);
 	}
 
 	remove(id, params) {
+		console.log("user remove");
 		return Promise.resolve({ id });
 	}
 }

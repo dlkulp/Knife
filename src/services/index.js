@@ -22,14 +22,21 @@ module.exports = function () {
 	r.dbList().contains(dbConfig.name)
 		.do(dbExists => r.branch(dbExists, {create: 0}, r.dbCreate(dbConfig.name))).run()
 		
-		// Create tables if doesn't exist
+		// Create user tables if doesn't exist
 		.then(() => {
 			return r.db(dbConfig.name).tableList().contains(dbConfig.tables.users)
 			.do(tableExists => r.branch(tableExists, {created: 0}, r.tableCreate(dbConfig.tables.users))).run()
 		})
 		
+		// Create teams tables if doesn't exist
 		.then(() => {
 			return r.db(dbConfig.name).tableList().contains(dbConfig.tables.teams)
 			.do(tableExists => r.branch(tableExists, {created: 0}, r.tableCreate(dbConfig.tables.teams))).run()
+		})
+		
+		// Create games tables if doesn't exist
+		.then(() => {
+			return r.db(dbConfig.name).tableList().contains(dbConfig.tables.games)
+			.do(tableExists => r.branch(tableExists, {created: 0}, r.tableCreate(dbConfig.tables.games))).run()
 		});
 };
