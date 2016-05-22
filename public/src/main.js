@@ -4,13 +4,17 @@ import VueRouter from "vue-router";
 import Vue from "vue";
 import Home from "./components/Home.vue";
 import Browse from "./components/Browse.vue";
+import UserProfile from "./components/UserProfile.vue";
+import TeamProfile from "./components/TeamProfile.vue";
+import GameProfile from "./components/GameProfile.vue";
 // import App from "./App.vue";
 
 const App = Vue.extend({});
 
 Vue.use(VueRouter);
 var router = new VueRouter({
-	history: false
+	history: false,
+	hashbang: false
 });
 
 router.map({
@@ -21,6 +25,18 @@ router.map({
 	"/browse": {
 		name: "browse",
 		component: Browse
+	},
+	"/user-profile": {
+		name: "user-profile",
+		component: UserProfile
+	},
+	"/team-profile": {
+		name: "team-profile",
+		component: TeamProfile
+	},
+	"/game-profile": {
+		name: "game-profile",
+		component: GameProfile
 	}
 });
 
@@ -58,4 +74,10 @@ $("#loginSubmin").click(() => {
 $(document).ready(() => {
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 	$(".modal-trigger").leanModal();
+	$(".parallax").parallax();
+	$("ul.tabs").tabs();
+});
+
+$("#nav-mobile li a").click(() => {
+	location.reload();
 });

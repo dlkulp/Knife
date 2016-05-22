@@ -1,14 +1,14 @@
 <template>
+	<!-- Top Image -->
+	<br><br>
+	<div class="row parallax-container" style="height: 350px">
+		<div class="parallax"><img v-bind:src="team.link"></img></div>
+	</div>
 	<div class="container">
-		<!-- Top Image -->
-		<br><br>
-		<div class="center row valign-wrapper">
-			<img v-bind:src="user.image" class="valign circle z-depth-2 responsive-img col s4"></img>
-			<div class="col s10" style="margin-left: 25px">
-				<h1>{{user.name}}</h1>
-				<p>{{user.desc}}</p>
-			</div>
-		</div>		
+		<div class="col s10" style="margin-left: 25px">
+			<h1>{{team.name}}</h1>
+			<p>{{team.desc}}</p>
+		</div>
 		<br>
 		
 		<!-- Teams/Games -->
@@ -28,20 +28,20 @@
 			<div id="{{tab1}}" class="col s12">
 				<div class="container">
 					<ul>
-						<li v-for="team in user.teams" class="col s12 m6 l4">
+						<li v-for="user in team.users" class="col s12 m6 l4">
 							<div class="card hoverable medium">
 								<div class="card-image">
-									<img class="activator" v-bind:src="team.link">
+									<img class="activator" v-bind:src="user.image">
 								</div>
 								<div class="card-content">
-									<span class="card-title activator grey-text text-darken-4">{{team.title}}<i class="material-icons right">more_vert</i></span>
+									<span class="card-title activator grey-text text-darken-4">{{user.name}}<i class="material-icons right">more_vert</i></span>
 								</div>
 								<div class="card-action">
-									<a v-bind:href="team.link">team page</a>
+									<a v-bind:href="user.image">user page</a>
 								</div>
 								<div class="card-reveal">
-									<span class="card-title grey-text text-darken-4">{{team.title}}<i class="material-icons right">close</i></span>
-									<p>{{team.desc}}</p>
+									<span class="card-title grey-text text-darken-4">{{user.name}}<i class="material-icons right">close</i></span>
+									<p>{{user.desc}}</p>
 								</div>
 							</div>
 						</li>
@@ -53,7 +53,7 @@
 			<div id="{{tab2}}" class="col s12">
 				<div class="container">
 					<ul>
-						<li v-for="game in user.games" class="col s12 m6 l4">
+						<li v-for="game in team.games" class="col s12 m6 l4">
 							<div class="card hoverable medium">
 								<div class="card-image">
 									<img class="activator" v-bind:src="game.link">
@@ -86,16 +86,16 @@
 	export default {
 		data () {
 			return {
-				tab1: "Teams",
+				tab1: "Team Members",
 				tab2: "Games",
-				user: {
-					name: "Broman McBroface", 
-					desc: "I like big data and I cannot lie, you other programmers cannot lie. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-					image: "../../assets/logo.png",
-					teams: [
-						{title: "hi", desc: "you", link: "../../assets/logo.png" }, 
-						{title: "hello", desc: "him", link: "../../assets/logo.png" }, 
-						{title: "howdy", desc: "her", link: "../../assets/logo.png" }
+				team: {
+					name: "Bro Masters",
+					desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+					link: "../../assets/team.jpg",
+					users: [
+						{name:"Broman McBroface", desc:"I like big data and I cannot lie, you other programmers cannot lie.", image: "../../assets/logo.png"},
+						{name:"Bromitri Bromichev", desc:"I like big guns and I cannot lie, you other comrades cannot lie.", image: "../../assets/logo.png"},
+						{name:"Broeux Bropond", desc:"I like big cheese and I cannot lie, you other frenchmen cannot lie", image: "../../assets/logo.png"}
 					],
 					games: [
 						{title: "bye", desc: "gurl", link: "../../assets/logo.png" }, 
