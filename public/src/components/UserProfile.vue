@@ -17,9 +17,7 @@
 				<div class="col s12">
 					<ul class="tabs">
 						<li class="tab col s3"><a class="active" href="#{{tab1}}">{{tab1}}</a></li>
-						<li class="tab col s3"><a href="#{{tab2}}">{{tab2}}</a></li>
-						<li class="tab col s3 disabled"><a href="#"></a></li>
-						<li class="tab col s3 disabled"><a href="#"></a></li>
+						<li class="tab col s3 pull-3"><a href="#{{tab2}}">{{tab2}}</a></li>
 					</ul>
 				</div>
 			</div>
@@ -29,7 +27,7 @@
 				<div class="container">
 					<ul>
 						<li v-for="team in user.teams" class="col s12 m6 l4">
-							<div class="card hoverable medium">
+							<div class="card hoverable small">
 								<div class="card-image">
 									<img class="activator" v-bind:src="team.link">
 								</div>
@@ -37,7 +35,7 @@
 									<span class="card-title activator grey-text text-darken-4">{{team.title}}<i class="material-icons right">more_vert</i></span>
 								</div>
 								<div class="card-action">
-									<a v-bind:href="team.link">team page</a>
+									<a v-link="{path: team.page}">team page</a>
 								</div>
 								<div class="card-reveal">
 									<span class="card-title grey-text text-darken-4">{{team.title}}<i class="material-icons right">close</i></span>
@@ -54,7 +52,7 @@
 				<div class="container">
 					<ul>
 						<li v-for="game in user.games" class="col s12 m6 l4">
-							<div class="card hoverable medium">
+							<div class="card hoverable small">
 								<div class="card-image">
 									<img class="activator" v-bind:src="game.link">
 								</div>
@@ -62,7 +60,7 @@
 									<span class="card-title activator grey-text text-darken-4">{{game.title}}<i class="material-icons right">more_vert</i></span>
 								</div>
 								<div class="card-action">
-									<a v-bind:href="game.link">game page</a>
+									<a v-link="{path: game.page}">game page</a>
 								</div>
 								<div class="card-reveal">
 									<span class="card-title grey-text text-darken-4">{{game.title}}<i class="material-icons right">close</i></span>
@@ -93,16 +91,18 @@
 					desc: "I like big data and I cannot lie, you other programmers cannot lie. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
 					image: "../../assets/logo.png",
 					teams: [
-						{title: "hi", desc: "you", link: "../../assets/logo.png" }, 
-						{title: "hello", desc: "him", link: "../../assets/logo.png" }, 
-						{title: "howdy", desc: "her", link: "../../assets/logo.png" }
+						{title: "Ubisoft Montreal", desc: "Canadian Games", link: "../../assets/team.jpg", page:"/team-profile" }, 
+						{title: "hi", desc: "you", link: "../../assets/logo.png", page:"/team-profile" }, 
+						{title: "hello", desc: "him", link: "../../assets/logo.png", page:"/team-profile" }, 
+						{title: "howdy", desc: "her", link: "../../assets/logo.png", page:"/team-profile" }
 					],
 					games: [
-						{title: "bye", desc: "gurl", link: "../../assets/logo.png" }, 
-						{title: "adios", desc: "y'all", link: "../../assets/logo.png" }, 
-						{title: "goodbye", desc: "pal", link: "../../assets/logo.png" }, 
-						{title: "later", desc: "person", link: "../../assets/logo.png" }, 
-						{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png" }
+						{title:"Tom Clancy's The Division", desc:"Lorem Ipsum", link: "../../assets/game-cover.jpg", page:"/game-profile"},
+						{title: "bye", desc: "gurl", link: "../../assets/logo.png", page:"/game-profile" }, 
+						{title: "adios", desc: "y'all", link: "../../assets/logo.png", page:"/game-profile" }, 
+						{title: "goodbye", desc: "pal", link: "../../assets/logo.png", page:"/game-profile" }, 
+						{title: "later", desc: "person", link: "../../assets/logo.png", page:"/game-profile" }, 
+						{title: "hasta luego", desc: "buddy", link: "../../assets/logo.png", page:"/game-profile" }
 					]
 				}
 			}

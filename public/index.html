@@ -10,102 +10,104 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	<body>
-		<header>
-			<!-- Menu -->
-			<nav>
-				<div class="nav-wrapper red darken-3">
-					<ul id="nav-mobile" class="left hide-on-med-and-down">
-						<li><a v-link="{path: '/'}">Home</a></li>
-						<li><a v-link="{path: '/browse'}">Browse</a></li>
-						<li><a v-link="{path: '/'}">About</a></li>
-					</ul>
-					<a href="#" class="brand-logo center">Logo</a>
-					<ul class="right hide-on-med-and-down">
-						<li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>
-					</ul>
-				</div>
-			</nav>
+		<div id="wrap"><!-- style="min-height: 100%; margin-bottom: -175px;">-->
+			<header>
+				<!-- Menu -->
+				<nav>
+					<div class="nav-wrapper red darken-3">
+						<ul id="nav-mobile" class="left hide-on-med-and-down">
+							<li><a v-link="{path: '/'}">Home</a></li>
+							<li><a v-link="{path: '/browse'}">Browse</a></li>
+							<li><a v-link="{path: '/'}">About</a></li>
+						</ul>
+						<a href="#" class="brand-logo center">Logo</a>
+						<ul class="right hide-on-med-and-down">
+							<li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>
+						</ul>
+					</div>
+				</nav>
 
-			<!-- Login -->
-			<div id="modal1" class="modal">
-			<div class="row">
-				<div class="col s12">
-					<ul class="tabs">
-						<li class="tab col s3"><a href="#signup" class="active">Sign Up</a></li>
-						<li class="tab col s3"><a href="#login">Login</a></li>
-					</ul>
-				</div>
-				<div id="signup" class="col s12">
-					<form>
-						<div class="modal-content">
-							<h4>Sign Up</h4>
-							<label for="suname">Username <input id="suname" name="suname" type="text" required="required" placeholder="Username" /></label>
-							<label for="spass">Password <input id="spass" name="spass" type="password" required="required" placeholder="Password" /></label>
-						</div>
-						<div class="modal-footer">
-							<a id="signupSubmit" class="waves-effect waves-light btn-flat" value="signup">Sign Up</a>
-						</div>
-					</form>
-				</div>
-				<div id="login" class="col s12">
-					<form>
-						<div class="modal-content">
-							<h4>Login</h4>
-							<label for="luname">Username <input id="luname" name="luname" type="text" required="required" autofocus="autofocus" placeholder="Username" /></label>
-							<label for="lpass">Password <input id="lpass" name="lpass" type="password" required="required" placeholder="Password" /></label>
-						</div>
-						<div class="modal-footer">
-							<a id="loginSubmit" class="waves-effect waves-light btn-flat" value="login">Login</a>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		</header>
-
-		<!--Router insertion point-->
-		<router-view></router-view>
-
-		<!--Footer-->
-		<footer class="page-footer red darken-3">
-			<div class="container">
+				<!-- Login -->
+				<div id="modal1" class="modal">
 				<div class="row">
-					<div class="col l6 s12">
-						<h5 class="white-text">Jam Description</h5>
-						<p class="grey-text text-lighten-4">A descirption of the jam</p>
+					<div class="col s12">
+						<ul class="tabs">
+							<li class="tab col s3"><a href="#signup" class="active">Sign Up</a></li>
+							<li class="tab col s3"><a href="#login">Login</a></li>
+						</ul>
 					</div>
-					<div class="col l4 offset-l2 s12">
-						<h5 class="white-text">Social Media</h5>
-						<div class="chip">
-							<img src="./assets/logo.png" class="circle small" alt="Contact Person">
-							<a class="grey-text" href="#">Twister</a>
-						</div>
-						<div class="chip">
-							<img src="./assets/logo.png" class="circle small" alt="Contact Person">
-							<a class="grey-text" href="#">Vime</a>
-						</div>
-						<div class="chip">
-							<img src="./assets/logo.png" class="circle" alt="Contact Person">
-							<a class="grey-text" href="#">Facebok</a>
-						</div>
-						<div class="chip">
-							<img src="./assets/logo.png" class="circle" alt="Contact Person">
-							<a class="grey-text" href="#">Red-dot</a>
-						</div>
+					<div id="signup" class="col s12">
+						<form>
+							<div class="modal-content">
+								<h4>Sign Up</h4>
+								<label for="suname">Username <input id="suname" name="suname" type="text" required="required" placeholder="Username" /></label>
+								<label for="spass">Password <input id="spass" name="spass" type="password" required="required" placeholder="Password" /></label>
+							</div>
+							<div class="modal-footer">
+								<a id="signupSubmit" class="waves-effect waves-light btn-flat" value="signup">Sign Up</a>
+							</div>
+						</form>
+					</div>
+					<div id="login" class="col s12">
+						<form>
+							<div class="modal-content">
+								<h4>Login</h4>
+								<label for="luname">Username <input id="luname" name="luname" type="text" required="required" autofocus="autofocus" placeholder="Username" /></label>
+								<label for="lpass">Password <input id="lpass" name="lpass" type="password" required="required" placeholder="Password" /></label>
+							</div>
+							<div class="modal-footer">
+								<a id="loginSubmit" class="waves-effect waves-light btn-flat" value="login">Login</a>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
-			<div class="footer-copyright">
+			</header>
+
+			<!--Router insertion point-->
+			<router-view></router-view>
+
+			<!--Footer-->
+			<footer class="page-footer red darken-3"><!-- style="height: 175px;">-->
 				<div class="container">
-					<div class="left">
-						© 2016 &nbsp; <a class="grey-text text-lighten-4 right" href="http://gl0vgames.com">GL0V Games</a>
-					</div>
-					<div class="right">
-						<a href="#" class="waves-effect waves-light btn">contact us</a>
+					<div class="row">
+						<div class="col l6 s12">
+							<h5 class="white-text">Jam Description</h5>
+							<p class="grey-text text-lighten-4">A descirption of the jam</p>
+						</div>
+						<div class="col l4 offset-l2 s12">
+							<h5 class="white-text">Social Media</h5>
+							<div class="chip">
+								<img src="./assets/logo.png" class="circle small" alt="Contact Person">
+								<a class="grey-text" href="#">Twister</a>
+							</div>
+							<div class="chip">
+								<img src="./assets/logo.png" class="circle small" alt="Contact Person">
+								<a class="grey-text" href="#">Vime</a>
+							</div>
+							<div class="chip">
+								<img src="./assets/logo.png" class="circle" alt="Contact Person">
+								<a class="grey-text" href="#">Facebok</a>
+							</div>
+							<div class="chip">
+								<img src="./assets/logo.png" class="circle" alt="Contact Person">
+								<a class="grey-text" href="#">Red-dot</a>
+							</div>
+						</div>
 					</div>
 				</div>
-        	</div>
-		</footer>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="left">
+							© 2016 &nbsp; <a class="grey-text text-lighten-4 right" href="http://gl0vgames.com">GL0V Games</a>
+						</div>
+						<div class="right">
+							<a href="#" class="waves-effect waves-light btn">contact us</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 		<!-- JQUERYYYYYYYYY -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 		<!-- This Thing -->
