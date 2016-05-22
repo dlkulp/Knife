@@ -15,9 +15,9 @@
 			<nav>
 				<div class="nav-wrapper">
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Browse</a></li>
-					<li><a href="#">About</a></li>
+					<li><a v-link="{path: '/'}">Home</a></li>
+					<li><a v-link="{path: '/browse'}">Browse</a></li>
+					<li><a v-link="{path: '/'}">About</a></li>
 				</ul>
 				<a href="#" class="brand-logo center">Logo</a>
 				<ul class="right hide-on-med-and-down">
@@ -25,7 +25,7 @@
 				</ul>
 				</div>
 			</nav>
-			
+
 			<!-- Login -->
 			<div id="modal1" class="modal">
 			<div class="row">
@@ -59,14 +59,14 @@
 						</div>
 					</form>
 				</div>
-			</div>			
+			</div>
 		</div>
 		</header>
-		
-		<!-- Page Inserted Here -->
-		<app></app>
-		
-		<!-- Yup, Footer -->
+
+		<!--Router insertion point-->
+		<router-view></router-view>
+
+		<!--Footer-->
 		<footer class="page-footer">
 			<div class="container">
 				<div class="row">

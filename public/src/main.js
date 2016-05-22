@@ -1,13 +1,30 @@
-/* global $ */
 /* global feathers */
+/* global $ */
+import VueRouter from "vue-router";
 import Vue from "vue";
-import App from "./App.vue";
+import Home from "./components/Home.vue";
+import Browse from "./components/Browse.vue";
+// import App from "./App.vue";
 
-/* eslint-disable no-new */
-new Vue({
-	el: "body",
-	components: { App }
+const App = Vue.extend({});
+
+Vue.use(VueRouter);
+var router = new VueRouter({
+	history: false
 });
+
+router.map({
+	"/": {
+		name: "root",
+		component: Home
+	},
+	"/browse": {
+		name: "browse",
+		component: Browse
+	}
+});
+
+router.start(App, "body");
 
 let user;
 let token;

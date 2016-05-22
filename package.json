@@ -30,6 +30,7 @@
     "body-parser": "^1.15.1",
     "compression": "^1.6.2",
     "cors": "^2.7.1",
+    "css-loader": "^0.23.1",
     "feathers": "^2.0.1",
     "feathers-authentication": "^0.7.7",
     "feathers-configuration": "^0.2.3",
@@ -41,6 +42,7 @@
     "rethinkdbdash": "^2.3.5",
     "serve-favicon": "^2.3.0",
     "vue": "^1.0.0",
+    "vue-router": "^0.7.13",
     "winston": "^2.2.0"
   },
   "devDependencies": {
