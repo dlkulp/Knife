@@ -1,8 +1,6 @@
 <template>
-	<div class="hello">
-		<h1>{{ title }}</h1>
-		<p>{{ description }}</p>
-	</div>
+	<h1>{{ title }}</h1>
+	<p>{{ description }}</p>
 </template>
 
 <script>
