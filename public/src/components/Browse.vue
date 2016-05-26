@@ -7,11 +7,9 @@
 		<div class="container">
 			<div class="col s12">
 				<ul class="tabs" style="overflow: hidden">
-					<li class="tab col s3"><a class="active" href="#{{tab1}}">{{tab1}}</a></li>
-					<li class="tab col s3"><a href="#{{tab2}}">{{tab2}}</a></li>
-					<li class="tab col s3 disabled"><a href="#"></a></li>
-					<li class="tab col s3 disabled"><a href="#"></a></li>
-				</ul>
+						<li class="tab col s6"><a class="active" href="#{{tab1}}">{{tab1}}</a></li>
+						<li class="tab col s6"><a href="#{{tab2}}">{{tab2}}</a></li>
+					</ul>
 			</div>
 		</div>
 		<!-- Tab 1 -->
@@ -89,6 +87,14 @@
 					{title: "Blizzard Studios", desc: "him", link: "../../assets/blizzard.jpg", page:"/team-profile" }, 
 					{title: "Gabe Newell", desc: "her", link: "../../assets/gabe-newell.jpg", page:"/team-profile" }
 				]
+			}
+		},
+		route: {
+			activate: (transition) => {
+				transition.next();
+				$(".parallax").parallax();
+				$("ul.tabs").tabs();
+				$(".slider").slider({full_width: true});
 			}
 		}
 	}

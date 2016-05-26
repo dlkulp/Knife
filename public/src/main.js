@@ -7,8 +7,13 @@ import Browse from "./components/Browse.vue";
 import UserProfile from "./components/UserProfile.vue";
 import TeamProfile from "./components/TeamProfile.vue";
 import GameProfile from "./components/GameProfile.vue";
-// import App from "./App.vue";
+import Menu from "./components/Menu.vue";
+import Foot from "./components/Foot.vue";
 
+let menu = Vue.extend(Menu);
+let foot = Vue.extend(Foot);
+Vue.component("menu", menu);
+Vue.component("foot", foot);
 const App = Vue.extend({});
 
 Vue.use(VueRouter);
@@ -40,6 +45,14 @@ router.map({
 	}
 });
 
+router.afterEach(function () {
+	$(".modal-trigger").leanModal();
+	$(".parallax").parallax();
+	$("ul.tabs").tabs();
+	$(".slider").slider({full_width: true});
+	console.log("hi");
+});
+
 router.start(App, "body");
 
 let user;
@@ -55,7 +68,7 @@ let app = feathers()
 	.configure(feathers.authentication({ storage: window.localStorage }));
 
 // Authenticate
-$("#loginSubmin").click(() => {
+$("#loginSubmit").click(() => {
 	app.authenticate({
 		type: "local",
 		email: $("#luname").val(),
@@ -80,9 +93,10 @@ $(document).ready(() => {
 });
 
 $("#nav-mobile li a").click(() => {
-	location.reload();
+	// location.reload();
 });
 
 $(".card-action a").click(() => {
-	location.reload();
+	// location.reload();
 });
+

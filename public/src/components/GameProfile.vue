@@ -21,7 +21,7 @@
 				
 				<ul>
 					<h4>Features</h4>
-					<li v-for="feature in game.features">{{feature}}</li>
+					<li v-for="feature in game.features">-&nbsp;{{feature}}</li>
 				</ul>
 				
 				<ul>
@@ -73,6 +73,14 @@
 		},
 		components: {
 			Sidebar
+		},
+		route: {
+			activate: (transition) => {
+				transition.next();
+				$(".parallax").parallax();
+				$("ul.tabs").tabs();
+				$(".slider").slider({full_width: true});
+			}
 		}
 	}
 </script>

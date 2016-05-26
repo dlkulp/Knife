@@ -9,107 +9,14 @@
 		<link type="text/css" rel="stylesheet" href="dist/css/materialize.min.css"  media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
-	<body> <!-- style="margin:0; padding:0;">-->
-		<div id="wrap"><!-- style="min-height: 100%; position: relative;">-->
-			<header>
-				<!-- Menu -->
-				<nav>
-					<div class="nav-wrapper red darken-3">
-						<ul id="nav-mobile" class="left hide-on-med-and-down">
-							<li><a v-link="{path: '/'}">Home</a></li>
-							<li><a v-link="{path: '/browse'}">Browse</a></li>
-							<li><a v-link="{path: '/'}">About</a></li>
-						</ul>
-						<a href="#" class="brand-logo center">Knife</a>
-						<ul class="right hide-on-med-and-down">
-							<li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>
-						</ul>
-					</div>
-				</nav>
-
-				<!-- Login -->
-				<div id="modal1" class="modal">
-				<div class="row">
-					<div class="col s12">
-						<ul class="tabs">
-							<li class="tab col s3"><a href="#login" class="active">Login</a></li>
-							<li class="tab col s3"><a href="#signup">Sign Up</a></li>
-						</ul>
-					</div>
-					<div id="signup" class="col s12">
-						<form>
-							<div class="modal-content">
-								<h4>Sign Up</h4>
-								<label for="suname">Username <input id="suname" name="suname" type="text" required="required" placeholder="Username" /></label>
-								<label for="spass">Password <input id="spass" name="spass" type="password" required="required" placeholder="Password" /></label>
-								<label for="spassverify">Verify Password <input id="spassverify" name="spassverify" type="password" required="required" placeholder="Verify Password" /></label>
-								<label for="semail">Email <input id="spassverify" name="semail" type="email" required="required" placeholder="Email" /></label>
-								<label for="sslug">Unique Slug <input id="sslug" name="sslug" type="text" required="required" placeholder="Unique Slug" /></label>
-							</div>
-							<div class="modal-footer">
-								<a id="signupSubmit" class="waves-effect waves-light btn-flat" value="signup">Sign Up</a>
-							</div>
-						</form>
-					</div>
-					<div id="login" class="col s12">
-						<form>
-							<div class="modal-content">
-								<h4>Login</h4>
-								<label for="luname">Username <input id="luname" name="luname" type="text" required="required" autofocus="autofocus" placeholder="Username" /></label>
-								<label for="lpass">Password <input id="lpass" name="lpass" type="password" required="required" placeholder="Password" /></label>
-							</div>
-							<div class="modal-footer">
-								<a id="loginSubmit" class="waves-effect waves-light btn-flat" value="login">Login</a>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			</header>
-
+	<body>
+		<div id="wrap">
+			<menu></menu>
+		
 			<!--Router insertion point-->
 			<router-view></router-view>
 
-			<!--Footer-->
-			<footer class="page-footer red darken-3"><!-- style="position: absolute; bottom: 0; width: 100%; height: 183px;">-->
-				<div class="container">
-					<div class="row">
-						<div class="col l6 s12">
-							<h5 class="white-text">Jam Description</h5>
-							<p class="grey-text text-lighten-4">A descirption of the jam</p>
-						</div>
-						<div class="col l4 offset-l2 s12">
-							<h5 class="white-text">Social Media</h5>
-							<div class="chip">
-								<img src="./assets/media/twitter-icon.png" class="circle small" alt="twitter icon">
-								<a class="grey-text" href="http://twitter.com">Twister</a>
-							</div>
-							<div class="chip">
-								<img src="./assets/media/vine-icon.jpg" class="circle small" alt="vine icon">
-								<a class="grey-text" href="http://vine.co">Vime</a>
-							</div>
-							<div class="chip">
-								<img src="./assets/media/Facebook-icon.png" class="circle" alt="facebook icon">
-								<a class="grey-text" href="http://facebook.com">Facebok</a>
-							</div>
-							<div class="chip">
-								<img src="./assets/media/reddit-icon.png" class="circle" alt="reddit icon">
-								<a class="grey-text" href="http://reddit.com">Red-dot</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="footer-copyright">
-					<div class="container">
-						<div class="left">
-							© 2016 &nbsp; <a class="grey-text text-lighten-4 right" href="http://gl0vgames.com">GL0V Games</a>
-						</div>
-						<div class="right">
-							<a href="#" class="waves-effect waves-light btn">contact us</a>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<foot></foot>
 		</div>
 		<!-- JQUERYYYYYYYYY -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
