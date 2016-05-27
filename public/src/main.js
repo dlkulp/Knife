@@ -45,14 +45,6 @@ router.map({
 	}
 });
 
-router.afterEach(function () {
-	$(".modal-trigger").leanModal();
-	$(".parallax").parallax();
-	$("ul.tabs").tabs();
-	$(".slider").slider({full_width: true});
-	console.log("hi");
-});
-
 router.start(App, "body");
 
 let user;
@@ -90,13 +82,5 @@ $(document).ready(() => {
 	$(".parallax").parallax();
 	$("ul.tabs").tabs();
 	$(".slider").slider({full_width: true});
+	$(".button-collapse").sideNav();
 });
-
-$("#nav-mobile li a").click(() => {
-	// location.reload();
-});
-
-$(".card-action a").click(() => {
-	// location.reload();
-});
-
