@@ -22,9 +22,10 @@
     "test": "nyc ava test",
     "start": "node server.js",
     "lint": "xo",
-    "fly": "fly",
-    "build": "fly build",
-    "dev": "webpack-dev-server --watch --hot --inline --content-base public/ --port 955"
+    "gulp": "gulp",
+    "build": "gulp build",
+    "dev:back": "gulp dev:back",
+    "dev:front": "webpack-dev-server --watch --hot --inline --content-base public/ --port 955"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
