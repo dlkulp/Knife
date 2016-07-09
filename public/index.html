@@ -8,13 +8,30 @@
 		<!-- MaterializeCSS -->
 		<link type="text/css" rel="stylesheet" href="dist/css/materialize.min.css"  media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			html,body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#wrap {
+				display: flex;
+				flex-direction: column;
+				min-height: 100%;
+			}
+			#vue {
+				flex: 1;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="wrap">
 			<menu></menu>
 		
 			<!--Router insertion point-->
-			<router-view></router-view>
+			<div id="vue">
+				<router-view></router-view>
+			</div>
 
 			<foot></foot>
 		</div>
