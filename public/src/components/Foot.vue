@@ -9,8 +9,8 @@
 				<div class="col l4 offset-l2 s12">
 					<h5 class="white-text">Social Media</h5>
 					<div v-for="media in socialMedia" class="chip">
-						<img v-bind:src="media.icon" class="circle small" alt="{{media.text}} icon">
-						<a class="grey-text" v-bind:href="media.link">{{media.text}}</a>
+						<img :src="media.icon" class="circle small" alt="{{media.text}} icon">
+						<a class="grey-text" :href="media.link">{{media.text}}</a>
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,7 @@
 	<br>
 	<div class="row">
 		<!--<div class="col s12" style="height:400px; overflow:hidden">
-			<img v-bind:src="team.link" style="height:100%;"></img>
+			<img :src="team.link" style="height:100%;"></img>
 		</div>-->
 		<div class="col s10" style="margin-left: 25px">
 			<h3>{{studio}}</h3>
@@ -28,7 +28,7 @@
 				<li v-for="user in team.users" class="col s12 m12 l6">
 					<div class="card hoverable small">
 						<div class="card-image">
-							<img class="activator" v-bind:src="user.image">
+							<img class="activator" :src="user.image">
 						</div>
 						<div class="card-content">
 							<div class="card-title activator grey-text text-darken-4">{{user.name}}</div><i class="material-icons right">more_vert</i>
@@ -51,7 +51,7 @@
 				<li v-for="game in team.games" class="col s12 m12 l6">
 					<div class="card hoverable small">
 						<div class="card-image">
-							<img class="activator" v-bind:src="game.link">
+							<img class="activator" :src="game.link">
 						</div>
 						<div class="card-content">
 							<span class="card-title activator grey-text text-darken-4">{{game.title}}<i class="material-icons right">more_vert</i></span>

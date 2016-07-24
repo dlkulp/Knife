@@ -3,7 +3,7 @@
 		<!-- Top Image -->
 		<br><br>
 		<div class="center row valign-wrapper">
-			<img v-bind:src="user.image" class="valign circle z-depth-1 responsive-img col s4"></img>
+			<img :src="user.image" class="valign circle z-depth-1 responsive-img col s4"></img>
 			<div class="col s10" style="margin-left: 25px">
 				<h1>{{user.name}}</h1>
 				<p>{{user.desc}}</p>
@@ -29,7 +29,7 @@
 						<li v-for="team in user.teams" class="col s12 m6 l4">
 							<div class="card hoverable small">
 								<div class="card-image">
-									<img class="activator" v-bind:src="team.link">
+									<img class="activator" :src="team.link">
 								</div>
 								<div class="card-content">
 									<span class="card-title activator grey-text text-darken-4">{{team.title}}<i class="material-icons right">more_vert</i></span>
@@ -54,7 +54,7 @@
 						<li v-for="game in user.games" class="col s12 m6 l4">
 							<div class="card hoverable small">
 								<div class="card-image">
-									<img class="activator" v-bind:src="game.link">
+									<img class="activator" :src="game.link">
 								</div>
 								<div class="card-content">
 									<div class="card-title activator grey-text text-darken-4">{{game.title}}</div>
