@@ -7,6 +7,9 @@ const cors = require("cors");
 const compression = require("compression");
 const express = require("express");
 const morgan = require("morgan");
+const r = require("rethinkdbdash")();
+
+const userService = require("./routes/user");
 
 const app = express();
 const port = 3030;
@@ -22,8 +25,28 @@ app.use(morgan("dev"));
 app.use(compression());
 
 // Configure routes
+app.use("/users", userService);
 
+// Multi-threading
 if (cluster.isMaster) {
+	r.dbList().contains("knife")
+		.do(databaseExists => {
+			return r.branch(
+				databaseExists,
+				{ dbs_created: 0 },
+				r.dbCreate("knife")
+			);
+		}).run().then(() => {
+			r.db("knife").tableList().contains("users")
+				.do(tableExists => {
+					return r.branch(
+						tableExists,
+						{ tables_created: 0 },
+						r.db("knife").tableCreate("users")
+					);
+				}).run();
+		});
+
 	// Fork processes
 	const cpuNum = require("os").cpus().length;
 	for (let i = 0; i < cpuNum; i++) cluster.fork();
