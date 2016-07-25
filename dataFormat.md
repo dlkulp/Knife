@@ -21,6 +21,6 @@
 # Teams/Studios
 - **name** `[string]`: *name of studio*
 - **desc** `[string]`: *long description of studio*
-- **link** `[url]`: *image for team*
+- **image** `[url]`: *image for team*
 - **users** `[array[object]]`: *list of users in studio*
 - **games** `[array[object]]`: *list of games created by studio*
