@@ -15,7 +15,7 @@
 - **features** `[array[string]]`: *list of short descriptions*
 - **specs** `[object[string]]`: *key/value dictionary of specs {"ram":"6gb", "processor": "intel Xeon"}*
 - **download** `[string]`: *primary link to download game from*
-- **mirrors** `[array[string]]`: *optional list of alternate places to download game*
+- **mirrors** `[array[url]]`: *optional list of alternate places to download game*
 - **meta** `[object[string]]`: *key/value dictionary of other random stuff about the game {engine:"snowdrop", version: "1.0"}*
 
 # Teams/Studios
