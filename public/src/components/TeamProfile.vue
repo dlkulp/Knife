@@ -2,7 +2,7 @@
 	<!-- Top Image -->
 	<br>
 	<div class="row parallax-container" style="height: 400px">
-		<div class="parallax" style="margin-top: 200px;"><img v-bind:src="team.link"></img></div>
+		<div class="parallax" style="margin-top: 200px;"><img v-bind:src="team.image"></img></div>
 	</div>
 	<div class="container">
 		<div class="col s10" style="margin-left: 25px">
@@ -90,7 +90,7 @@
 				team: {
 					name: "Ubisoft Montréal",
 					desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-					link: "../../assets/team.jpg",
+					image: "../../assets/team.jpg",
 					users: [
 						{name:"Broman McBroface", desc:"I like big data and I cannot lie, you other programmers cannot lie.", image: "../../assets/notch.jpg", page:"/user-profile"},
 						{name:"Bromitri Bromichev", desc:"I like big guns and I cannot lie, you other comrades cannot lie.", image: "../../assets/logo.png", page:"/user-profile"},

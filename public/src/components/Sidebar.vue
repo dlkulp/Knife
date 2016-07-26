@@ -25,7 +25,7 @@
 		<!-- Tab 1 -->
 		<div id="{{tab1}}" class="col s12">
 			<ul>
-				<li v-for="user in team.users" class="col s12 m12 l6">
+				<li v-for="user in team.users" class="col s12 m6 l6">
 					<div class="card hoverable small">
 						<div class="card-image">
 							<img class="activator" :src="user.image">
@@ -48,7 +48,7 @@
 		<!-- Tab 2 -->
 		<div id="{{tab2}}" class="col s12">
 			<ul>
-				<li v-for="game in team.games" class="col s12 m12 l6">
+				<li v-for="game in team.games" class="col s12 m6 l6">
 					<div class="card hoverable small">
 						<div class="card-image">
 							<img class="activator" :src="game.link">
@@ -87,9 +87,9 @@ export default {
 					{name:"Broeux Bropond", desc:"I like big cheese and I cannot lie, you other frenchmen cannot lie", image: "../../assets/logo.png", page:"/user-profile"}
 				],
 				games: [
-					{title:"Tom Clancy's The Division", desc:"Lorem Ipsum", link: "../../assets/game-cover.jpg", page:"/game-profile"},
-					{title: "Far Cry Primal", desc: "pal", link: "../../assets/far-cry-primal.jpg", page:"/game-profile" }, 
-					{title: "Rainbow Six Siege", desc: "person", link: "../../assets/rainbow-six.jpg", page:"/game-profile" }
+					{title:"Tom Clancy's The Division", desc:"Lorem Ipsum", link: "../../assets/game-cover.jpg", slug:"the-division"},
+					{title: "Far Cry Primal", desc: "pal", link: "../../assets/far-cry-primal.jpg", slug:"far-cry-primal" }, 
+					{title: "Rainbow Six Siege", desc: "person", link: "../../assets/rainbow-six.jpg", slug:"rainbow6" }
 				]
 			}
 		}
