@@ -7,6 +7,7 @@ import Browse from "./components/Browse.vue";
 import UserProfile from "./components/UserProfile.vue";
 import TeamProfile from "./components/TeamProfile.vue";
 import GameProfile from "./components/GameProfile.vue";
+import GameAdmin from "./components/GameAdmin.vue";
 import Menu from "./components/Menu.vue";
 import Foot from "./components/Foot.vue";
 
@@ -42,6 +43,10 @@ router.map({
 	"/game-profile": {
 		name: "game-profile",
 		component: GameProfile
+	},
+	"/game-admin": {
+		name: "game-admin",
+		component: GameAdmin
 	}
 });
 

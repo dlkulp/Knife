@@ -61,7 +61,7 @@
 					</ul>
 				</div>
 				<div class="col l9">
-					<p>{{{game.desc}}}</p>
+					<p>{{game.desc}}</p>
 				</div>
 			</div>
 		</div>
