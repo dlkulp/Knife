@@ -44,8 +44,13 @@
 					</ul>
 					
 					<ul class="z-depth-1">
-						<h5>Downloads</h5>
+						<h5>Download</h5>
 						<li><a :href="game.download">Download Here</a></li>
+					</ul>
+
+					<ul class="z-depth-1">
+						<h5>Mirrors</h5>
+						<li v-for="mirror in game.mirrors"><a :href="mirror">Mirror {{$index + 1}}</a></li>
 					</ul>
 					
 					<ul class="z-depth-1">
@@ -56,7 +61,7 @@
 					</ul>
 				</div>
 				<div class="col l9">
-					<p>{{{game.desc}}}</p>
+					<p>{{game.desc}}</p>
 				</div>
 			</div>
 		</div>
@@ -71,6 +76,7 @@
 	export default {
 		data () {
 			return {
+				url: window.location.href.match("([^=|\/]*)$")[0],
 				game: {
 					name: "Tom Clancy's The Division",
 					studio: "Ubisoft Montréal",
@@ -82,7 +88,7 @@
 							"RAM": "6GB",
 							"Hard Drive Space": "40GB"},
 					download: "//tomclancy-thedivision.ubi.com/game/en-US/buy/index.aspx",
-					mirrors: [],
+					mirrors: ["//store.steampowered.com/app/365590/"],
 					meta:  {"Engine": "Snowdrop",
 							"Version": "1.0",
 							"Release Date": "8 March, 2016"}
