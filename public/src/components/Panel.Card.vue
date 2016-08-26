@@ -1,5 +1,6 @@
 <template>
     <style>
+        /* Reference only
         .cardBlock {
             display: table;
             width: 100%;
@@ -33,15 +34,25 @@
         }
         .material-icons {
             vertical-align: middle;
+        }*/
+        @media only screen and (max-width:993px) {
+            .customCard {
+                width: calc(100% / 4);
+            }
+        }
+        @media only screen and (max-width:601px) {
+            .customCard {
+                width: calc(100% / 2);
+            }
         }
     </style>
-    <div class="cardBlock" :style="'background-color: ' + color">
-        <div class="cardCenter">
-            <div v-for="item in items" class="customCard">
-                <img :src="item.img">
+    <div class="cardBlock" :style="'display:table;width:100%;margin-top:4em;margin-bottom:4em;background-color: ' + color">
+        <div class="cardCenter" style="display:table-cell;text-align:center;vertical-align:middle;">
+            <div v-for="item in items" class="customCard" style="margin-left:20px;width:calc(100%/6);max-width:335px;height:15px;display:inline-block;">
+                <img :src="item.img" style="width: 100%;">
                 <span class="flow-text">{{item.title}}</span>
                 <div v-if="item.link && item.more">
-                    <a :href="item.link">{{item.more}} <i class="material-icons">chevron_right</i></a>
+                    <a :href="item.link">{{item.more}} <i class="material-icons" style="vertical-align: middle;">chevron_right</i></a>
                 </div>
             </div>
         </div>
