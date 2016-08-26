@@ -1,5 +1,13 @@
 <template>
-    <div class="flow-text" :style="'display:flex;justify-content:' + align + ';align-items:center;width:100%;min-height:200px;background-color:' + bgcolor + ';color:' + color">
+    <style>
+        .textBlock {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 200px;
+        }
+    </style>
+    <div class="textBlock flow-text" :style="'justify-content:' + align + ';background-color:' + bgcolor + ';color:' + color">
         <div style="width: 500px; margin-left: 10%; margin-right: 10%">{{text}}</div>
     </div>
 </template>
