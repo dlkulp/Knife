@@ -49,31 +49,31 @@ export default {
 				"type": "card",
 				"items": [{
 					"img": "../../assets/media/reddit-icon.png",
-					"title": "RED-DOT!!",
+					"title": "Red-Dot is a site with lots of dots, most of which are red and dot-like.",
 					"link": "//reddit.com",
 					"desc": "Red-Dot",
 					"more": "see more dots"
 				}, {
 					"img": "../../assets/media/vine-icon.jpg",
-					"title": "VIME?",
+					"title": "Vine is a place for twerking and other random things.",
 					"link": "//vine.com",
 					"desc": "Vime",
 					"more": "see more vimes"
 				}, {
 					"img": "../../assets/media/twitter-icon.png",
-					"title": "TWISTER!",
+					"title": "A location for companies and crazy people to rant.",
 					"link": "//twister.com",
 					"desc": "Twister",
 					"more": "twist and shout"
 				}, {
 					"img": "../../assets/media/reddit-icon.png",
-					"title": "RED-DOT!!",
+					"title": "All of the dankest memes hang out here for your viewing pleasure.",
 					"link": "//reddit.com",
 					"desc": "Red-Dot",
 					"more": "see more dots"
 				}, {
 					"img": "../../assets/media/twitter-icon.png",
-					"title": "TWISTER!",
+					"title": "Enjoy all of your favorite random memdumps frm your friends, family, and other random people.",
 					"link": "//twister.com",
 					"desc": "Twister",
 					"more": "twist and shout"
@@ -90,7 +90,7 @@ export default {
 					"img": "../../assets/media/reddit-icon.png",
 					"title": "RED-DOT!!",
 					"link": "//reddit.com",
-					"desc": "Red-Dot"
+					"desc": ""
 				}, {
 					"img": "../../assets/media/twitter-icon.png",
 					"title": "TWISTER!",

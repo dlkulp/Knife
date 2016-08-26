@@ -35,12 +35,15 @@
         .material-icons {
             vertical-align: middle;
         }*/
-        @media only screen and (max-width:993px) {
+        .customCard {
+            width: calc(100% / 6);
+        }
+        @media only screen and (max-width:1601px) {
             .customCard {
                 width: calc(100% / 4);
             }
         }
-        @media only screen and (max-width:601px) {
+        @media only screen and (max-width:1025px) {
             .customCard {
                 width: calc(100% / 2);
             }
@@ -48,7 +51,7 @@
     </style>
     <div class="cardBlock" :style="'display:table;width:100%;margin-top:4em;margin-bottom:4em;background-color: ' + color">
         <div class="cardCenter" style="display:table-cell;text-align:center;vertical-align:middle;">
-            <div v-for="item in items" class="customCard" style="margin-left:20px;width:calc(100%/6);max-width:335px;height:15px;display:inline-block;">
+            <div v-for="item in items" class="customCard" style="vertical-align:top;margin-left:20px;max-width:335px;display:inline-block;">
                 <img :src="item.img" style="width: 100%;">
                 <span class="flow-text">{{item.title}}</span>
                 <div v-if="item.link && item.more">
