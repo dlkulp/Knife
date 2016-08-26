@@ -24,3 +24,22 @@
 - **image** `[url]`: *image for team*
 - **users** `[array[object]]`: *list of users in studio*
 - **games** `[array[object]]`: *list of games created by studio*
+
+# Homepage Panels
+(all panels will have **type** plus the contents of one of the sections below)
+- **type** `[string]`: *the type of the panel (card, text, et cetera)*
+
+## Card
+- **items** `[array[object]]`: *list of cards*
+    - **img** `[url]`: *image for card*
+    - **title** `[string]`: *title of the card*
+    - **link** `[url]`: *link to content*
+    - **desc** `[string]`: *longer description of card*
+    - **more** `[string]`: *text for link to show more*
+- **color** `[string]`: *css `background-color` attribute for panel background (blue, #8a345c, gainsboro)*
+
+## text
+- **align** `[string]`: *css `justify-content` attribute to shift text (flex-start, flex-end, center)*
+- **text** `[string]`: *the actual text to be displayed*
+- **bgcolor** `[string]`: *css `background-color` attribute for panel background (blue, #8a345c, gainsboro)*
+- **color** `[string]`: *css `color` attribute for text color (white, #00FF7d, gainsboro)

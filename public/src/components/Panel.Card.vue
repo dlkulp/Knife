@@ -1,45 +1,61 @@
 <template>
     <style>
-        /* https://css-tricks.com/centering-in-the-unknown/ */
-        /* This parent can be any width and height */
-        .block {
+        /* Reference only
+        .cardBlock {
+            display: table;
+            width: 100%;
+            margin-top: 4em;
+            margin-bottom: 4em;
+        }
+        .cardCenter {
+            display: table-cell;
             text-align: center;
-
-            /* May want to do this if there is risk the container may be narrower than the element inside */
-            white-space: nowrap;
-        }
-        
-        /* The ghost, nudged to maintain perfect centering */
-        .block:before {
-            content: '';
-            display: inline-block;
-            height: 100%;
             vertical-align: middle;
-            margin-right: -0.25em; /* Adjusts for spacing */
         }
-
-        /* The element to be centered, can also be of any width and height */ 
-        .centered {
+        .customCard {
+            margin-left: 20px;
+            width: calc(100% / 6);
+            max-width: 335px;
+            height: 15px;
             display: inline-block;
+        }
+        @media only screen and (max-width:993px) {
+            .customCard {
+                width: calc(100% / 4);
+            }
+        }
+        @media only screen and (max-width:601px) {
+            .customCard {
+                width: calc(100% / 2);
+            }
+        }
+        .customCard img {
+            width: 100%;
+        }
+        .material-icons {
             vertical-align: middle;
+        }*/
+        @media only screen and (max-width:993px) {
+            .customCard {
+                width: calc(100% / 4);
+            }
+        }
+        @media only screen and (max-width:601px) {
+            .customCard {
+                width: calc(100% / 2);
+            }
         }
     </style>
-    <div class="block" :style="'background-color: ' + color">
-        <ul class="row centered">
-            <li v-for="item in items" class="col s6 m5 l2" style="display: inline-block; float: initial">
-                <div class="card small">
-                    <div class="card-image">
-                        <img :src="item.img">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">{{item.title}}</span>
-                    </div>
-                    <div v-if="item.link && item.more" class="card-action">
-                        <a :href="item.link">{{item.more}} ></a>
-                    </div>
+    <div class="cardBlock" :style="'display:table;width:100%;margin-top:4em;margin-bottom:4em;background-color: ' + color">
+        <div class="cardCenter" style="display:table-cell;text-align:center;vertical-align:middle;">
+            <div v-for="item in items" class="customCard" style="margin-left:20px;width:calc(100%/6);max-width:335px;height:15px;display:inline-block;">
+                <img :src="item.img" style="width: 100%;">
+                <span class="flow-text">{{item.title}}</span>
+                <div v-if="item.link && item.more">
+                    <a :href="item.link">{{item.more}} <i class="material-icons" style="vertical-align: middle;">chevron_right</i></a>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </template>
 <script>
