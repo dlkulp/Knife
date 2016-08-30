@@ -73,7 +73,7 @@ export default {
 					"more": "see more dots"
 				}, {
 					"img": "../../assets/media/twitter-icon.png",
-					"title": "Enjoy all of your favorite random memdumps frm your friends, family, and other random people.",
+					"title": "Enjoy all of your favorite random memdumps from your friends, family, and other random people.",
 					"link": "//twister.com",
 					"desc": "Twister",
 					"more": "twist and shout"
